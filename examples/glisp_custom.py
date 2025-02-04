@@ -8,9 +8,13 @@ from glis.solvers import GLISp
 #savefigs = False
 savefigs = True
 
-# implementation GLISp on statical dmps, we want to optimize parameter tau and delta_t
-lb = np.array([0.0001, 0.0001])
-ub = np.array([0.5, 0.5])
+# implementation GLISp on statical dmps, we want to optimize parameters tau and delta_t
+#lb = np.array([0.0001, 0.0001])
+#ub = np.array([0.5, 0.5])
+
+# implementation GLISp on statical dmps, we want to optimize parameters alfa_y and beta_y in dmps equation
+lb = np.array([0.1, 0.1])
+ub = np.array([150, 100])
 # function fun is unknown now
 # and we don't know optimum/optimizer 
 
@@ -32,7 +36,7 @@ def pref_fun(x1, x2):
 
 ##########################################
 
-key = 10
+key = 5
 np.random.seed(key)  # rng default for reproducibility
 ####################################################################################
 print("Solve the problem by feeding the  preference expression step directly into the GLISp solver")
